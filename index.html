@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Frequency Filters</title>
+		<link rel="stylesheet" href="assets/css/style.css">
+		<!--		SWITCH BETWEEN MIC AND AUDIO	-->
+		<!-- <script src="assets/js/microphone.js" type="module"></script> -->
+		<script src="assets/js/audio.js" type="module"></script>
+	</head>
+	<body>
+		<main class="main">
+			<div class="merz">
+				<img class="image" src="/heike_grebin.jpg" alt="">
+			</div>
+			<div class="font-container">
+				<div class="marquee-container">
+					<div class="marquee">
+					  <span>heike grebin heike grebin&nbsp;&nbsp;&nbsp;</span>
+					  <span>heike grebin heike grebin&nbsp;&nbsp;&nbsp;</span>
+					  <span>heike grebin heike grebin&nbsp;&nbsp;&nbsp;</span>
+					  
+					</div>
+				  </div>
+				<h1 class="title sync-bleed" contenteditable="true">
+				  <span class="word word1">gestalter</span>
+				  <span class="word word2">aller</span>
+				  <span class="word word3">länder</span>
+				  <span class="word word4">vereinigt</span>
+				  <span class="word word5">euch</span>
+				</h1>
+			  </div>
+				<div class="bottom">
+				<div class="flex sync-bleed">
+
+					<div>
+					    
+						<p>danke heike, für deine </p>
+						<p> geduld, für dein </p>
+						<p>interesse an uns<p>
+						<p>studierenden und die</p>
+						<p>erhrliche beschäftigung</p>
+					    <p>mit uns und unseren themen.</p>
+						</div>
+
+					<h1 class="bigline">play the</h1>
+					
+				<div>
+					<p>danke heike, für</p>
+					<p>deine geduld, für</p>
+					<p>dein interesse an uns<p>
+					<p>studierenden und die</p>
+					<p>erhrliche beschäftigung</p>
+					<p>mit uns und unseren themen.</p>
+				
+				</div>
+			</div>
+			<div class="flex-1 sync-bleed">
+
+				<div>
+					
+					<p>danke, dass du meine</p>
+					<p>inhalte, so plakativ und</p>
+					<p>flach sie auch sind,</p>
+					<p>ausgehalten und</p>
+					<p> unterstützt hast</p>
+			</div>
+		<h1 class="bigline">systhem</h1>
+		<div>
+			<p>danke, dass du meine</p>
+			<p>inhalte, so plakativ und</p>
+			<p>flach sie auch sind, ausgehalten</p>
+			<p>und unterstützt hast</p>
+			
+	</div>
+</div>
+	<div class="flex-2 sync-bleed">
+	
+	<div>
+		<p> </p>
+		<p>danke, dass du als eine der</p>
+		<p>wenigen, politischem diskurs<p>
+		<p>raum gegeben hast und gestaltung</p>
+		<p>immer wieder aus dem elfenbein</p>
+		<p>turm geholt hast</p>
+			
+	</div>		
+			
+<h1 class="bigline">against the</h1>
+
+	<div>
+		<p> </p>
+		<p>danke, dass du als eine der</p>
+		<p>wenigen, politischem diskurs<p>
+		<p>raum gegeben hast und gestaltung</p>
+		<p>immer wieder aus dem elfenbein</p>
+		<p>turm geholt hast</p>
+			
+	</div>		
+</div> 
+<div class="flex-3 sync-bleed">
+<div>
+	<p> </p>
+	<p>ich werde dich und deine</p>
+	<p>offene, zugewandte art </p>
+	<p>deine konstruktive kritik</p>
+	<p>und deine lehre vermissen</p>
+	<p></p>
+</div>
+		<h1 class="bigline">systhem</h1>
+		<div>
+			<p> </p>
+			<p>ich werde dich und deine</p>
+			<p>offene, zugewandte art</p>
+			<p>deine konstruktive kritik</p>
+			<p>und deine lehre vermissen</p>
+			<p></p>
+		</div>
+	
+</div>
+</div>
+		
+		</main>
+
+		<div class="controls">
+
+
+			<!--		SWITCH BETWEEN MIC AND AUDIO	-->
+			<!-- AUDIO INPUT -->
+
+
+			<div class="audio">
+				<audio id="audiosource" src="assets/audio/Disarstar – Meine Söhne geb ich nicht Official Video.mp3" controls loop></audio>
+			</div>
+
+
+
+
+
+			<!-- MICROPHONE INPUT -->
+
+<!-- 
+			<div class="mic">
+				<span>Allow microphone</span>
+			</div> -->
+
+
+
+
+
+
+			<div class="wrapper">
+				<span class="control-title"e>Frequency range</span>
+				<div class="values">
+					<span id="range1">
+						0
+					</span>
+					<span>&mdash;</span>
+					<span id="range2">
+						100
+					</span>
+					<span>kHz</span>
+				</div>
+				<div class="container">
+					<div class="slider-track"></div>
+					<input type="range" min="0" max="44100" value="0" id="slider-freq-1" oninput="lowerBound(this, document.getElementById('slider-freq-2'), '', document.getElementById('range1'), '')">
+					<input type="range" min="0" max="44100" value="44100" id="slider-freq-2" oninput="upperBound(document.getElementById('slider-freq-1'), this, '', document.getElementById('range2'), '')">
+				</div>
+			</div>
+
+			<div class="wrapper">
+				<span class="control-title">Sensitivity</span>
+				<span id="sensitivity"></span>
+				<input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-sensitivity" class="slider-track" oninput="sliderInput(this, document.getElementById('sensitivity'))">
+			</div>
+
+			<div class="wrapper">
+				<span class="control-title">Transition</span>
+				<span id="transition"></span>
+				<input type="range" min="0" max="5" value="0.1" step="0.01" id="slider-transition" class="slider-track" oninput="sliderInput(this, document.getElementById('transition'))">
+			</div>
+
+
+			<div class="wrapper">
+				<span class="control-title">Variable font range</span>
+				<div class="values">
+					<span id="rangevfont1">
+						0
+					</span>
+					<span> &mdash; </span>
+					<span id="rangevfont2">
+						1000
+					</span>
+					<span></span>
+				</div>
+				<div class="container">
+					<div class="slider-track-v-font"></div>
+					<input type="range" min="0" max="1000" value="0" id="slider-v-font-1" oninput="lowerBound(this, document.getElementById('slider-v-font-2'), '.title', document.getElementById('rangevfont1'), '--font-weight')">
+					<input type="range" min="0" max="1000" value="1000" id="slider-v-font-2" oninput="upperBound(document.getElementById('slider-v-font-1'), this, '.title', document.getElementById('rangevfont2'))">
+				</div>
+			</div>
+
+
+		</div>
+
+
+		<!-- SLIDER LOGIC -->
+		<script>
+			let minGap = 0;
+
+			function lowerBound(lBoundObject, uBoundObject, target, lBoundDisplayObject, axisTag) {
+				if (parseInt(uBoundObject.value) - parseInt(lBoundObject.value) <= minGap) {
+					lBoundObject.value = parseInt(uBoundObject.value) - minGap;
+				}
+				if(axisTag != "") {
+					document.querySelector(target).style.setProperty(axisTag, lBoundObject.value);
+				}
+				lBoundDisplayObject.textContent = lBoundObject.value;
+			}
+
+
+			function upperBound(lBoundObject, uBoundObject, target, uBoundDisplayObject) {
+				if (parseInt(uBoundObject.value) - parseInt(lBoundObject.value) <= minGap) {
+					uBoundObject.value = parseInt(lBoundObject.value) + minGap;
+				}
+				uBoundDisplayObject.textContent = uBoundObject.value;
+			}
+
+			function sliderInput(sliderObject, sliderDisplayObject) {
+				sliderDisplayObject.innerHTML = sliderObject.value;
+			}
+		</script>
+
+	</body>
+</html>
